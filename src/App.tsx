@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react"
 import { Column } from "./Column"
 import { Card } from "./Card"
 import { AppContainer } from "./styles"
+import { AddNewItem } from "./AddNewItem"
 
-function App() {
+const App = () => {
   return (
     <AppContainer>
       <Column text="To Do">
@@ -15,8 +16,9 @@ function App() {
       <Column text="Done">
         <Card text="Begin to use static typing" />
       </Column>
+      <AddNewItem toggleButtonText="+ Add another list" onAdd={console.log} />
     </AppContainer>
-  );
+  )
 }
 
-export default App;
+export default App

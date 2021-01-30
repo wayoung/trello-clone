@@ -1,9 +1,5 @@
 import styled from "styled-components"
 
-interface AddItemButtonProps {
-  dark?: boolean
-}
-
 export const AppContainer = styled.div`
   align-items: flex-start;
   background-color: #3179ba;
@@ -39,6 +35,10 @@ export const CardContainer = styled.div`
   box-shadow: #091e4240 0px 1px 0px 0px;
 `
 
+interface AddItemButtonProps {
+  dark?: boolean
+}
+
 export const AddItemButton = styled.button<AddItemButtonProps>`
   background-color: #ffffff3d;
   border-radius: 3px;
@@ -63,6 +63,15 @@ export const NewItemFormContainer = styled.div`
   align-items: flex-start;
 `
 
+export const NewItemInput = styled.input`
+  border-radius: 3px;
+  border: none;
+  box-shadow: #091e4240 0px 1px 0px 0px; 
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+`
+
 export const NewItemButton = styled.button`
   background-color: #5aac44;
   border-radius: 3px;
@@ -71,13 +80,4 @@ export const NewItemButton = styled.button`
   color: #fff;
   padding: 6px 12px;
   text-align: center;
-`
-
-export const NewItemInput = styled.input`
-  border-radius: 3px;
-  border: none;
-  box-shadow: #091e4240 0px 1px 0px 0px;
-  margin-bottom: 0.5rem;
-  padding: 0.5rem 1rem;
-  width: 100%;
 `
