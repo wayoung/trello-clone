@@ -41,7 +41,7 @@ const CustomDragLayer: React.FC = () => {
           index={item.index}
           isPreview={true}
         />
-        ) : {
+        ) : (
           <Card
             columnId={item.columnId}
             isPreview={true}
@@ -49,7 +49,7 @@ const CustomDragLayer: React.FC = () => {
             id={item.id}
             text={item.text}
           />
-        }}
+        )}
       </div>
     </CustomDragLayerContainer>
   )
