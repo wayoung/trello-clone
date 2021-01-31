@@ -21,13 +21,15 @@ export const Column = ({ text, index, id, isPreview }: ColumnProps) => {
   const [, drop] = useDrop({
     accept: "COLUMN",
     hover(item: DragItem) {
-      const dragIndex = item.index
-      const hoverIndex = index
-      if (dragIndex === hoverIndex) {
-        return
+      if (item.type === "COLUMN") {
+        const dragIndex = item.index
+        const hoverIndex = index
+        if (dragIndex === hoverIndex) {
+          return
+        }
+        dispatch({ type: "MOVE_LIST", payload: { dragIndex, hoverIndex } })
+        item.index = hoverIndex
       }
-      dispatch({ type: "MOVE_LIST", payload: { dragIndex, hoverIndex } })
-      item.index = hoverIndex
     }
   })
 
