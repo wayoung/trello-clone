@@ -121,7 +121,7 @@ const appStateReducer = (state: AppState, action: Action): AppState => {
       )
 
       const sourceList = state.lists[sourceListIndex]
-      const task = sourceList.tasks[targetListIndex]
+      const task = sourceList.tasks[dragIndex]
 
       const updatedSourceList = {
         ...sourceList,
