@@ -11,13 +11,14 @@ interface DragPreviewContainerProps {
 
 export const AppContainer = styled.div`
   align-items: flex-start;
-  background-color: #3179ba;
+  background-color: #db755e;
   display: flex;
   flex-direction: row;
   height: 100%;
   padding: 20px;
   width: 100%;
 `
+
 export const DragPreviewContainer = styled.div<DragPreviewContainerProps>`
   transform: ${props => (props.isPreview ? "rotate(5deg)" : undefined)};
   opacity: ${props => props.isHidden ? 0 : 1};
