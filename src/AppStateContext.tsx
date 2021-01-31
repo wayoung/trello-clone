@@ -1,7 +1,8 @@
-import React, { createContext, useReducer, useContext } from "react"
+import React, { createContext, useReducer, useContext, useEffect } from "react"
 import { nanoid } from "nanoid"
 import { findItemIndexById, overrideItemAtIndex, moveItem, removeItemAtIndex, insertItemAtIndex } from "./utils/arrayUtils"
 import { DragItem } from "./DragItem"
+import { save } from "./api"
 
 interface Task {
   id: string
@@ -173,6 +174,10 @@ const appData: AppState = {
 
 export const AppStateProvider = ({ children }: React.PropsWithChildren<{}>) => {
   const [state, dispatch] = useReducer(appStateReducer, appData)
+
+  useEffect(() => {
+    save(state)
+  }, [state])
 
   return (
     <AppStateContext.Provider value={{ state, dispatch }}>
