@@ -2,7 +2,6 @@ import React, { createContext, useReducer, useContext } from "react"
 import { nanoid } from "nanoid"
 import { findItemIndexById, overrideItemAtIndex, moveItem, removeItemAtIndex, insertItemAtIndex } from "./utils/arrayUtils"
 import { DragItem } from "./DragItem"
-import { stringify } from "querystring"
 
 interface Task {
   id: string
@@ -137,7 +136,7 @@ const appStateReducer = (state: AppState, action: Action): AppState => {
 
       const updatedTargetList = {
         ...targetList,
-        lists: insertItemAtIndex(targetList.tasks, task, hoverIndex)
+        tasks: insertItemAtIndex(targetList.tasks, task, hoverIndex)
       }
 
       return {
