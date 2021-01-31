@@ -176,7 +176,7 @@ const appData: AppState = {
 export const AppStateProvider = withData((
   { children, initialState }: React.PropsWithChildren<{initialState: AppState}>
 ) => {
-  const [state, dispatch] = useReducer(appStateReducer, appData)
+  const [state, dispatch] = useReducer(appStateReducer, initialState)
 
   React.useEffect(() => {
     save(state)
